@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个GitHub Pages页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .counter {
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .counter-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .counter-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .counter-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .counter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 欢迎！</h1>
+        <p>这是我的第一个GitHub Pages页面，部署成功！</p>
+        
+        <div class="buttons">
+            <button class="btn" onclick="showAlert()">点击测试</button>
+            <a href="#features" class="btn">查看功能</a>
+        </div>
+
+        <div class="counter">
+            <h2>📊 计数器演示</h2>
+            <div class="counter-display" id="counterDisplay">0</div>
+            <div class="counter-buttons">
+                <button class="counter-btn" onclick="decrease()">-</button>
+                <button class="counter-btn" onclick="increase()">+</button>
+                <button class="counter-btn" onclick="reset()" style="width: 60px; border-radius: 30px;">清零</button>
+            </div>
+        </div>
+
+        <div class="features" id="features">
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>响应式设计</h3>
+                <p>完美适配所有设备尺寸</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>快速加载</h3>
+                <p>优化的代码确保快速响应</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>美观界面</h3>
+                <p>现代化的设计和动画效果</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔧</div>
+                <h3>易于维护</h3>
+                <p>清晰的代码结构便于修改</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
+            <p>🎉 恭喜！你已经成功部署了GitHub Pages</p>
+            <p>现在你可以将这个链接分享给任何人访问</p>
+        </div>
+    </div>
+
+    <script>
+        let counter = 0;
+        
+        function showAlert() {
+            alert('🎉 太棒了！页面运行正常！\n\n你已经成功部署了GitHub Pages！');
+        }
+        
+        function increase() {
+            counter++;
+            updateCounter();
+        }
+        
+        function decrease() {
+            counter--;
+            updateCounter();
+        }
+        
+        function reset() {
+            counter = 0;
+            updateCounter();
+        }
+        
+        function updateCounter() {
+            document.getElementById('counterDisplay').textContent = counter;
+        }
+        
+        // 页面加载完成后的欢迎信息
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                console.log('🎉 欢迎来到你的GitHub Pages！');
+                console.log('📝 你可以修改index.html文件来自定义这个页面');
+                console.log('🔗 分享链接: ' + window.location.href);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
